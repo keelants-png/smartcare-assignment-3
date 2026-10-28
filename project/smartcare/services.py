@@ -54,15 +54,20 @@ class AppointmentService:
     def book_appointment(self, appointment_id: str, patient_id: str, practitioner_id: str, date_time: datetime) -> Appointment:
         patient = self.data_store.find_patient(patient_id)
         practitioner = self.data_store.find_practitioner(practitioner_id)
+        
         if patient is None:
             raise LookupError('Patient not found')
         if practitioner is None:
             raise LookupError('Practitioner not found')
+            
         appointment = Appointment(appointment_id, patient, practitioner, date_time)
+        
         if self.data_store.find_appointment(appointment.appointment_id) is not None:
             raise ValueError('Appointment ID already exists')
+            
         if self.data_store.has_practitioner_conflict(practitioner.practitioner_id, date_time):
             raise ValueError('Practitioner already has a SCHEDULED appointment at this time')
+            
         self.data_store.add_appointment(appointment)
         return appointment
 
