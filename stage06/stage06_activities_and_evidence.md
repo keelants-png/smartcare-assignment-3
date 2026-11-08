@@ -1,13 +1,13 @@
-# Stage 6 Evidence
+# Stage 6 activities and evidence
 **Group/tutorial:** Solo Group
 **Members:** Keelan (UG)
 **Repository URL:** https://github.com/keelants-png/smartcare-assignment-3
 
-## A Requirement
-Implemented FR-02 (Patient Search) and FR-06/07 (Cancellation and Retained History).
+## A Requirement to issue activities
+Implemented FR-02 (Patient Search) and FR-06/07 (Cancellation and Retained History). Valid IDs return the stored object, missing IDs raise LookupError, and blank IDs raise ValueError.
 
 ## J Contributions
 **Member:** Keelan
-- Implemented `find_patient`, `find_practitioner`, and `cancel_appointment` in `services.py`.
-- Created `tests/test_services.py` with 6 tests.
-- Result: 14 passed.
+- **Implementation:** Implemented `find_patient`, `find_practitioner`, and `cancel_appointment` in `services.py`.
+- **Testing:** Created `tests/test_services.py` with 6 new tests to verify the implementations.
+- **Result:** 14 passed.
